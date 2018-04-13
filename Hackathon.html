@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="div"  class="ui-widget-content" tabindex="1">
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+</div>
+
+
+
+<script>
+
+$('#div').on('keyup', function(event){
+if(event.ctrlKey && event.key=='c'){
+alert("Hello");
+var tmpInput = document.createElement('input');
+var txt = $('#div').text();
+tmpInput.setAttribute('value', txt);
+document.body.appendChild(tmpInput);
+tmpInput.select();
+tmpInput.focus();
+//var divtmp = document.body.appendChild(tmpInput);
+document.execCommand("Copy");
+document.body.removeChild(tmpInput);
+}
+});
+</script>
+
+</body>
+</html>
